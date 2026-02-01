@@ -33,7 +33,17 @@ body {
 }
 
 /* Header Area */
-.site-header {
+.site-title {
+    font-weight: 600;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: #fff;
+    letter-spacing: -0.05em;
+    line-height: 1.1;
+}
+
+/* Share animation logic with post-header */
+.site-header,
+.post-header {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -47,17 +57,10 @@ body {
     transition: opacity 1.5s ease, transform 1.5s ease-out;
 }
 
-.site-header.visible {
+.site-header.visible,
+.post-header.visible {
     opacity: 1;
     transform: translateY(0);
-}
-
-.site-title {
-    font-weight: 600;
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
-    color: #fff;
-    letter-spacing: -0.05em;
-    line-height: 1.1;
 }
 
 .subtitle {
@@ -146,4 +149,60 @@ body {
         padding-left: 1.5rem;
         border-left: 1px solid #222;
     }
+}
+
+/* Post Content Styles */
+.post-header {
+    margin-bottom: 4rem;
+}
+
+.post-header .date {
+    margin-bottom: 1rem;
+}
+
+.post-header h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 600;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.author {
+    color: var(--accent-color);
+    font-weight: 300;
+    font-size: 1.1rem;
+}
+
+.article-content {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ccc;
+    font-weight: 300;
+
+    /* Animation Init */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.article-content p {
+    margin-bottom: 2rem;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 4rem;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: color 0.3s ease;
+    border-bottom: 1px solid transparent;
+}
+
+.back-link:hover {
+    color: #fff;
+    border-bottom: 1px solid #444;
 }
