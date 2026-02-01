@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Select elements
     // Select elements
-    const header = document.querySelector('.site-header');
+    const header = document.querySelector('.site-header, .post-header');
     const posts = document.querySelectorAll('.post-item');
+    const articleContent = document.querySelector('.article-content');
 
     // Initial State: All hidden (handled in CSS, but reinforced here if needed)
 
@@ -20,4 +21,12 @@ document.addEventListener('DOMContentLoaded', () => {
             post.classList.add('visible');
         }, startPostsAnimation + (index * 300)); // 300ms gap between each post
     });
+
+    // 3. Fade in article content
+    if (articleContent) {
+        setTimeout(() => {
+            articleContent.style.opacity = '1';
+            articleContent.style.transform = 'translateY(0)';
+        }, 800);
+    }
 });
